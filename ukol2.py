@@ -493,12 +493,13 @@ staty = [
      'area': 390757.0}]
 
 region_zajmu = input("Jaký region tě zajímá?")
+regiony = []
 for region in staty:
     if region["region"] == region_zajmu:
-        print (region["name"])
-    znamy_region = region["region"]
-if region_zajmu not in znamy_region:
-    print ("neznamy region")
+        print(region["name"])
+    regiony.append(region["region"])
+if region_zajmu not in regiony:
+    print("neznamy region")
  
 
     
