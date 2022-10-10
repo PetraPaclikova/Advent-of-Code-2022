@@ -7,7 +7,7 @@ def platne_cislo(cislo):
         return False
 
 def platba_za_SMS(zprava):
-        cena_zpravy = math.ceil(3*(len(zprava)/180))
+        cena_zpravy = math.ceil((len(zprava)/180))*3
         return cena_zpravy
 
 cislo = input("Na jaké číslo chceš poslat zprávu")
