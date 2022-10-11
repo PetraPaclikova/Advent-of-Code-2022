@@ -1,18 +1,17 @@
 import math
 
 def platne_cislo(cislo):
-    if len(cislo) == 9 or len(cislo) == 13:
-        return True
-    else:
-        return False
-
+    cislo = cislo.replace(" ","")
+    return len(cislo) == 9 or (len(cislo) == 13 and (cislo[0:4]) == "+420" )
+        
 def platba_za_SMS(zprava):
         cena_zpravy = math.ceil((len(zprava)/180))*3
         return cena_zpravy
 
 cislo = input("Na jaké číslo chceš poslat zprávu")
 
-print(platne_cislo(cislo))
+if (platne_cislo(cislo)) == False:
+    print("Neplatné číslo")
 
 if (platne_cislo(cislo)):
     zprava = input("Jakou zprávu chces poslat?")
