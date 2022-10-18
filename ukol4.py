@@ -1,4 +1,5 @@
-class Recepty:
+class Recept:
+
     def __init__(self, nazev, narocnost, url_adresa):
         self.nazev = nazev
         self.narocnost = narocnost
@@ -20,40 +21,42 @@ class Recepty:
     def uvareno(self):
         self.vyzkouseno = True
 
-gulas = Recepty("gulas","2", "url adresa")
-print(gulas)
-
-
-class Kucharka: 
-
+class Kucharka:
     def __init__(self, nazev, autor):
         self.nazev = nazev
         self.autor = autor
-        self.recept = []
+        self.recepty = []
         
     def __str__(self):
         return f"Kucharka {self.nazev} od autoru {self.autor} je plna skvelych receptu"
 
     def pocet_receptu(self):
-        pocet_receptu = len(self.recept)
-        print(f"V kucharce je {pocet_receptu} receptu")
+        pocet_receptu = len(self.recepty)
+        return pocet_receptu
         
     def pridej_recept(self,novy_recept):
-        self.recept.append(novy_recept)
+        self.recepty.append(novy_recept)
 
-    # def vyzkouseny_recept(self):
-    #     vyzkouseny_recept = []
-    #     for x in self.recept:
-    #         if x:
-    #             vyzkouseny_recept.append(x)
-    #             print(vyzkouseny_recept)
+    def vyzkouseny_recept(self):
+        vyzkouseny_recept = []
+        for x in self.recepty:
+            if x.vyzkouseno:
+                vyzkouseny_recept.append(x)
+                return (vyzkouseny_recept)
+                
+    
+                
+                
 
 
+gulas = Recept("gulas","2", "url adresa")
+print(gulas)
 kucharka1 = Kucharka("XY kucharka", "XY autor")
 kucharka1.pridej_recept(gulas)
 print(kucharka1.vyzkouseny_recept())
 gulas.uvareno()
 print(kucharka1.vyzkouseny_recept())
+
 
 
 
