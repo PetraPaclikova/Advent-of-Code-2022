@@ -42,7 +42,7 @@ class Kucharka:
         for x in self.recepty:
             if x.vyzkouseno:
                 vyzkouseny_recept.append(x)
-                return (vyzkouseny_recept)
+        return (vyzkouseny_recept)
                 
     
                 
